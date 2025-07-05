@@ -54,7 +54,20 @@ start           lea     CUSTOM,a6                       ; set address register t
                 ; Set up the Copper List
                 lea     copper_list,a0                  ; set a0 = address of copper list
                 move.l  a0,COP1LC(a6)                   ; set the copper list start address
-                move.w  #$8280,DMACON(a6)               ; enable the copper DMA
+                move.w  #$8280,DMACON(a6)               ; enable the copper DMA (bit 15 SET/CLR = 1, bit 9 DMAEN = 1, bit 7 COPEN = 1)
+                                                        ; %1000 0010 1000 0000
+                                                        ;
+                                                        ; Many custom chip control registers has a SET/CLR bit as bit 15.
+                                                        ;
+                                                        ; This allows you enable or disable services without modifying the existing settings.
+                                                        ;
+                                                        ; i.e. In the case of the DMA CONTROL Register above (DMACON):-
+                                                        ; Enabling DMA
+                                                        ;  - When the SET/CLR bit is set to 1, then DMA channels are enabled where the corresponding bits = 1, the 0 bits are left unchangd.
+                                                        ;
+                                                        ; Disabling DMA
+                                                        ;  -When the SET/CLR bit is set to 0, then DMA channeld are disabled where the corresponding bits = 1, the 0 bits are left unchanged.
+                                                        ;
 
                 ; loop forever
 .loop           jmp     .loop                           ; loop in back and do it again.
