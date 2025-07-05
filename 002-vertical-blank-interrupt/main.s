@@ -1,5 +1,3 @@
-; This example contains a simple 'copper list' program.
-;
 ; Important Concepts
 ; ------------------
 ; This example extends the simple copper example and adds a vertical blank interrupt to the code.

@@ -1,6 +1,6 @@
 ; Important Concepts
 ; ------------------
-; This example extends the simple copper with a vertical blank interrupt.
+; This example extends the 002-vertical-blank-interrupt with a vertical blank interrupt.
 ;
 ; The Copper list (or parts of it) can be generated in code.
 ;
