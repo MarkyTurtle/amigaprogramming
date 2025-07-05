@@ -28,7 +28,8 @@ Its worth taking a look at the files locarted within the .vscode folder as the f
             - contains the reference to you main source file to build and the output file name for the built code.
                 - NB. you will need to alter the **launch.json** file and the **/uae/s/startup-sequence** files if you change the output exec name.
 
-The **uae** folder contains the file system for the emulator environment. By default is contains the following folders and files
+<br/>
+The **uae** folder contains the file system for the emulator environment. By default is contains the following folders and files.
     - uae
         - c
             - This is the default folder name for comands (add your own supporting cli commands in here - not required unless you are doing something out of ther ordinary)
