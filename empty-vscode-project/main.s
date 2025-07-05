@@ -18,6 +18,9 @@
                 ; NB: There are better OS friendlier ways of taking over the 
                 ; system if you still want to use OS functions, we'll 
                 ; discuss those later.
+                ;
+                ; NB: If you want to start an exe from the workbench you
+                ; will also need additional code. (discuss this later)
                 ;----------------------------------------------------------------
 start           lea     CUSTOM,a6                       ; set address register to the base address of the custom chips $dff000
                 move.w  #$7fff,INTENA(a6)               ; disable all interrupts.
