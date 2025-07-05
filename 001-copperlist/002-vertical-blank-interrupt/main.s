@@ -186,6 +186,10 @@ copper_list     dc.w    $2c01,$fffe                     ; wait for vertical posi
                 dc.w    COLOR00
 copper_colour   dc.w    $0000
 
+                ; set background back to black
+                dc.w    $5001,$fffe
+                dc.w    COLOR00,$000
+
                 ; End of copper list - wait for location that will never be reached
                 ; two copper ends as per the hardware reference manual.
                 dc.w    $ffff,$fffe
