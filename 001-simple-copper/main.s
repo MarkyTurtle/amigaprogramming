@@ -1,5 +1,3 @@
-; This example contains a simple 'copper list' program.
-;
 ; Important Concepts
 ; ------------------
 ;
