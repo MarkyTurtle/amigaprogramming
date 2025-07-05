@@ -30,11 +30,11 @@ Its worth taking a look at the files locarted within the .vscode folder as the f
 
 <br/>
 The **uae** folder contains the file system for the emulator environment. By default is contains the following folders and files.
-    - uae
-        - c
+    - /uae
+        - /c
             - This is the default folder name for comands (add your own supporting cli commands in here - not required unless you are doing something out of ther ordinary)
-        - s
-            - contains the start up script (i.e. which command to run on start)
+        - /s
+            - This folder contains the start up script (i.e. which command to run on start)
             - set this to the name of your output executable
         - main (output exe)
             - the build executable of your project (if you renamed it in the config files above then it will be called that name.)
