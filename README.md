@@ -8,10 +8,10 @@ It assumes that you are using VSCode and have the Amiga Assembly plug-in install
 
 ## Example Projects
 
-**Simple Copper List**
+### Simple Copper List
 [001 - Simple Copper](./001-simple-copper/)
 ![Simple Copper](./001-simple-copper/gfx/Thumb.png)
 
-**Simple Copper List + Vertical Blank Interrupt**
+### Simple Copper List + Vertical Blank Interrupt
 [002-vertical-blank-interrupt](./002-vertical-blank-interrupt/)
 ![vertical-blank-interrupt](./002-vertical-blank-interrupt/gfx/Thumb.png)
