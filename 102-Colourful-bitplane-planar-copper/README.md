@@ -1,6 +1,6 @@
 # 102 - Colourful Bitplane with Copper Bars
 
-[Screen Shot Image](./gfx/Screenshot.png)
+![Screen Shot Image](./gfx/Screenshot.png)
 
 This example extends the '101 - Colourful Bitplane' project and displays a simple 5 bitplane logo at 384x256 resolution (PAL)
 
