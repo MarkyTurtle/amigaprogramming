@@ -7,6 +7,11 @@ It assumes that you are using VSCode and have the Amiga Assembly plug-in install
 - [Amiga Assembly Plug-in GitHub](https://github.com/prb28/vscode-amiga-assembly)
 
 ## Example Projects
-[001 - Simple Copper](./001-simple-copper/)
-- ![Simple Copper](./001-simple-copper/gfx/Thumb.png)
 
+**Simple Copper List**
+[001 - Simple Copper](./001-simple-copper/)
+![Simple Copper](./001-simple-copper/gfx/Thumb.png)
+
+**Simple Copper List + Vertical Blank Interrupt**
+[002-vertical-blank-interrupt](./002-vertical-blank-interrupt/)
+![vertical-blank-interrupt](./002-vertical-blank-interrupt/gfx/Thumb.png)
