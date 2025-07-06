@@ -1,4 +1,7 @@
 # 100 - Simple Bitplane
+
+![Screenshot](./gfx/Screenshot.png)
+
 This example extends the '100 - Simple Bitplane' project and displays a simple 5 bitplane logo at 320x256 resolution (PAL)
 
 It uses the information learned in the Copper examples and extends it to display a standard lo-res 320x256 PAL bitplane screen, and 
