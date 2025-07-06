@@ -1,4 +1,7 @@
 # 100 - Simple Bitplane
+
+![Screenshot](./gfx/Screenshot.png)
+
 This example displays a simple 1 bitplane screen at 320x256 resolution (PAL)
 The bitplane contains no useful graphical details (just a set ofvertical stripes on the screen display).
 
