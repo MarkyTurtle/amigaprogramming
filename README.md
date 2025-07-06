@@ -6,6 +6,7 @@ It assumes that you are using VSCode and have the Amiga Assembly plug-in install
 - [VSCode Editor](https://code.visualstudio.com/)
 - [Amiga Assembly Plug-in GitHub](https://github.com/prb28/vscode-amiga-assembly)
 
-## Example Code
-![Simple Copper](./001-simple-copper/gfx/Thumb.png)
-001 - Simple Copper
+## Example Projects
+[001 - Simple Copper](./001-simple-copper/)
+- ![Simple Copper](./001-simple-copper/gfx/Thumb.png)
+
