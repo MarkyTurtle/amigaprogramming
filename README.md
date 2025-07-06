@@ -7,5 +7,5 @@ It assumes that you are using VSCode and have the Amiga Assembly plug-in install
 - [Amiga Assembly Plug-in GitHub](https://github.com/prb28/vscode-amiga-assembly)
 
 ## Example Code
-![Simple Copper](./001-simpe-copper/gfx/thumb.png)
+![Simple Copper](./001-simple-copper/gfx/thumb.png)
 001 - Simple Copper
