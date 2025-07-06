@@ -214,7 +214,8 @@ generate_colour_bars
 .generate_list
                 move.w  d0,(a0)+                                ; set the 1st word for the copper wait value
                 move.w  #$fffe,(a0)+                            ; set the 2nd word for the copper wait value (the wait mask)
-                move.w  #COLOR00,(a0)+                          ; set the 3rd word for the copper move instruction (background colour register $dff180)
+                ;move.w  #COLOR15,(a0)+                          ; - Set Logo Colour - set the 3rd word for the copper move instruction
+                move.w  #COLOR00,(a0)+                          ;  - Set Background Colour - set the 3rd word for the copper move instruction (background colour register $dff180)
                 move.w  (a1)+,(a0)+                             ; set the 4th word for the copper move instruction (background colour value)
 
                 add.w   #$0100,d0                               ; increment the vertical wait value to the next raster line (copper wait)
