@@ -36,5 +36,6 @@ It assumes that you are using VSCode and have the Amiga Assembly plug-in install
 - [101-colourful-bitplane](./101-Colourful-bitplane-planar/)
 - ![colourful-bitplane](./101-Colourful-bitplane-planar/gfx/Thumb.png)
 
-### Colourful Bitplane (Planar) + Copper Animation
-- ![102-colourful-bitplane-planar-animation](./102-Colourful-bitplane-planar-copper/gfx/Thumb.png)
+### Colourful Bitplane (Planar) + Copper Bar Animation
+- [102-colourful-bitplane-planar-copper](./102-Colourful-bitplane-planar-copper/)
+- ![102-colourful-bitplane-planar-copper](./102-Colourful-bitplane-planar-copper/gfx/Thumb.png)
