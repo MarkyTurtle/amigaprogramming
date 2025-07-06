@@ -1,4 +1,4 @@
-# 100 - Simple Bitplane
+# 101 - Colourful Bitplane Planar
 
 ![Screenshot](./gfx/Screenshot.png)
 
