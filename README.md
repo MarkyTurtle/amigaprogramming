@@ -27,3 +27,14 @@ It assumes that you are using VSCode and have the Amiga Assembly plug-in install
 ### Copper List + Colour Table + Animation
 - [005-copper-colour-table-animation](./005-copper-colour-table-animation/)
 - ![copper-colour-table-animation](./005-copper-colour-table-animation/gfx/Thumb.png)
+
+### Simple Bitplane
+- [100-simple-bitplane](./100-simple-bitplane/)
+- ![simple-bitplane](./100-simple-bitplane/gfx/Thumb.png)
+
+### Colourful Bitplane (Planar)
+- [101-colourful-bitplane](./101-Colourful-bitplane-planar/)
+- ![colourful-bitplane](./101-Colourful-bitplane-planar/gfx/Thumb.png)
+
+### Colourful Bitplane (Planar) + Copper Animation
+- "[102-colourful-bitplane-planar-animation](./102-Colourful-bitplane-planar-copper/gfx/Thumb.png)
