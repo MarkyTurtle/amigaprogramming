@@ -1,4 +1,7 @@
 # 002 - Vertical Blank Interrupt
+
+![Screenshot](./gfx/Screenshot.png)
+
 This example extends 001-CopperList and adds a vertical blank interrupt handler to the code.
 
 The vertical blank interrupt handler is executed once per frame. 
