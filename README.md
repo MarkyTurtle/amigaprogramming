@@ -15,3 +15,15 @@ It assumes that you are using VSCode and have the Amiga Assembly plug-in install
 ### Simple Copper List + Vertical Blank Interrupt
 - [002-vertical-blank-interrupt](./002-vertical-blank-interrupt/)
 - ![vertical-blank-interrupt](./002-vertical-blank-interrupt/gfx/Thumb.png)
+
+### Computed Copper List
+- [003-computed-copper](./003-computed-copper/)
+- ![computed-copper](./003-computed-copper/gfx/Thumb.png)
+
+### Copper List + Colour Table
+- [004-copper-colour-table](./004-copper-colour-table/)
+- ![copper-colour-table](./004-copper-colour-table/gfx/Thumb.png)
+
+### Copper List + Colour Table + Animation
+- [005-copper-colour-table-animation](./005-copper-colour-table-animation/)
+- ![copper-colour-table-animation](./005-copper-colour-table-animation/gfx/Thumb.png)
