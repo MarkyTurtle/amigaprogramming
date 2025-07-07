@@ -192,9 +192,9 @@ copper_sprites
 
 
                 ; set sprite colours (colour 16 is sprite 1 transparency colour)
-                dc.w    COLOR17,$865
-                dc.w    COLOR18,$fed
-                dc.w    COLOR18,$533
+                dc.w    COLOR17,$068
+                dc.w    COLOR18,$aef
+                dc.w    COLOR18,$033
 
                 dc.w    $2b01,$fffe                   ; wait for raster line before the display starts ($2c)
 
