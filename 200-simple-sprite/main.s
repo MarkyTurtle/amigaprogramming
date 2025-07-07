@@ -105,15 +105,16 @@ init_sprites
                 rts
 
                 even 
-sprite1         dc.w    $6060,$6800                             ; Sprite Pos & Control word (8 raster lines high - not including the control words)
-                dc.w    $ffff,$0
-                dc.w    $ffff,$0
-                dc.w    $ffff,$0
-                dc.w    $ffff,$0
-                dc.w    $ffff,$0
-                dc.w    $ffff,$0
-                dc.w    $ffff,$0
-                dc.w    $ffff,$0                                   
+sprite1         dc.w    $6060,$6900                             ; Sprite Pos & Control word (9 raster lines high - not including the control words)
+                dc.w    %0000000000000000,%0000000100000000     ; second word is least significant
+                dc.w    %0000000000000000,%0000000100000000
+                dc.w    %0000000100000000,%0000000000000000
+                dc.w    %0000001110000000,%0000010101000000
+                dc.w    %0000011111000000,%0011101110111000
+                dc.w    %0000001110000000,%0000010101000000
+                dc.w    %0000000100000000,%0000000000000000
+                dc.w    %0000000000000000,%0000000100000000                                   
+                dc.w    %0000000000000000,%0000000100000000                                   
                 dc.w    $0,$0                                   ; end of sprite (or next control word if multiple sprites used - this line is not counted in sprite height)
 
 null_sprite     dc.w    $0000,$0000
@@ -139,7 +140,7 @@ vertb_interrupt_handler
 
                 ; Own Interrupt Handler Code goes here...
                 lea     sprite1,a0
-                add.b   #1,1(a0)                    ; increase sprite X value
+                ;add.b   #1,1(a0)                    ; increase sprite X value
 
 
                 ; clear VERTB interrupt reques flag
@@ -188,6 +189,12 @@ copper_list     dc.w    FMODE,$0000                   ; Clear AGA specific fmode
                 ;   dc.w  SPRxPTL,low 16 bits of sprite address ptr
 copper_sprites
                 dcb.w   4*8                             ; allocate memory for settings sprite ptrs
+
+
+                ; set sprite colours (colour 16 is sprite 1 transparency colour)
+                dc.w    COLOR17,$865
+                dc.w    COLOR18,$fed
+                dc.w    COLOR18,$533
 
                 dc.w    $2b01,$fffe                   ; wait for raster line before the display starts ($2c)
 

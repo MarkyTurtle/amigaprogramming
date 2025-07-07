@@ -178,6 +178,44 @@ init_colour_palette
 
 
 
+                ;----------------------------------------------------------------------
+                ; Get Sine Table Value
+                ;----------------------------------------------------------------------
+                ; Return a value on d0.b for the sine table index value supplied.
+                ; If the index is out of range of the table bounds + or -
+                ; Will still return a valid value.
+                ;
+                ; IN: -
+                ;   d0.w    - sine table index required
+                ; OUT: -
+                ;   d0.l    - sine table value
+                ;
+                ;----------------------------------------------------------------------
+SINTABLE_SIZE   EQU     $168                    ; $168 = 360 decimal (one entry per degree 0-359)
+
+get_sintable_value
+                move.l  a0,-(a7)                ; save a0 register.
+
+                ext.l   d0                      ; sign extend 16 bit value to long word.
+                divs.w  #SINTABLE_SIZE-1,d0       ; divide the requested index by the size of the sine table
+                swap    d0                      ; get the remainder (index into the table)
+                tst.w   d0                      ; test remainder value against zero.
+                bge.s   .not_negative
+
+.is_negative    add.w   #SINTABLE_SIZE,d0       ; if negative then add the sine table size to the remainder to find the index.
+
+.not_negative
+                lea     sine_table,a0           ; a0 = address of sine table
+                move.b  (a0,d0.w),d0            ; d0 = sintable entry at the index
+                ext.w   d0                      ; sign extend byte to word
+                ext.l   d0                      ; sign extend word to long
+
+                move.l  (a7)+,a0                ; restore saved a0 register.
+                rts
+
+
+
+
                 ; ----------------------------------------------------------
                 ; Generate colour bars in the copperlist by using the
                 ; processor to write the copper list instructions into
@@ -186,27 +224,15 @@ init_colour_palette
 sintable_index  dc.w    0                                       ; current index into the sine table (360 entries)
 
 generate_colour_bars
-
-                ; manage index into the sine table (wrap back to start if reach end of the table)
-                add.w   #$01,sintable_index                     ; increase the index into the sine table
-                cmp.w   #360,sintable_index                     ; test index against length of the sine table
-                blt.s   .continue
-                move.w  #0,sintable_index                       ; reset sine table index to 0 if > 359 (end of sine table)
-.continue
-
-                ; get colour table offset from sine table
-                ; have to multiply the sine table value by 2 to get 16 bit offset into the colour table.
-                moveq.l #0,d6                                   ; initialise d6 to zero (will be used to hold the colout table offset)
-                lea     sine_table,a0                           ; a0 = address of sine table data
-                move.w  sintable_index,d0                       ; d0 = index into sine table data
-                move.b  (a0,d0.w),d6                            ; d6 = byte value from sine table at offset in d0.
-                ext.w   d6                                      ; need to sign extend the sine value to 16 bits for the multiplication below.
-                muls    #2,d6                                   ; multiple sine value by 2 (to get 16 bit index into the colour table)
+                sub.w   #$01,sintable_index                     ; increase the index into the sine table
+                move.w  sintable_index,d0
+                bsr     get_sintable_value
+                muls    #2,d0                                   ; multiple sine value by 2 (to get 16 bit index into the colour table)
 
                 ; d6 = offset into the colour table
                 lea     colour_bars,a0                          ; get the address of the reserved block of memory in the copper list.
                 lea     colour_table,a1                         ; get the address of the colour table that contains a colour for each raster line.
-                lea     (a1,d6.w),a1                            ; set a1 = to colour table + offset from sine table.
+                lea     (a1,d0.w),a1                            ; set a1 = to colour table + offset from sine table.
 
                 move.w  #$4801,d0                               ; $4001 will be the start copper wait value, set data register d0 to the value
                 move.w  #COPPER_BARS_SIZE-1,d7                  ; loop counter -1 (the height of the colour lines to generate in the copper list)
