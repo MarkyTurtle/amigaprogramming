@@ -1,4 +1,4 @@
-# 100 - Simple Sprite
+# 200 - Simple Sprite
 
 ![Screenshot](./gfx/Screenshot.png)
 
